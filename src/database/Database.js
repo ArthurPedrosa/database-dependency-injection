@@ -1,25 +1,25 @@
 
-module.exports = class Repository {
-  database = null
+module.exports = class Database {
+  db = null
 
   constructor(database) {
-    this.database = database
+    this.db = database
   }
 
   async closeConnection() {
-    await this.database.closeConnection()
+    await this.db.closeConnection()
   }
   
   async execute(query) {
-    await this.database.execute(query)
+    await this.db.execute(query)
   }
 
   async query(query) {
-    const data = await this.database.query(query)
+    const data = await this.db.query(query)
     return data
   }
 
   async insert(query, params) {
-   await this.database.insert(query, params)
+   await this.db.insert(query, params)
   }
 }
